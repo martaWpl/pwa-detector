@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PWA Browser Support demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" crossorigin="anonymous">
+    <script src="script.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">PWA Browser Support</h1>
+        <p class="lead">Check your browser PWA features support:</p>
+        <button type="button" class="btn btn-info" id="check-button" data-toggle="modal" data-target="#modal">Check</button>
+        <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-title">Browser support</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="col-xs-12">Web Browser:</h4>
+                        <span id="browser-navigator"></span>
+                        <h4>PWA basics:</h4>
+                        <p class="col-xs-12">Service Worker: <span id="service-worker"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Background Sync: <span id="background-sync"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Push Notifications: <span id="push-notification"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Cache Storage (Offline): <span id="cache-storage"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Payments: <span id="payments"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Share: <span id="share"><i class="fas fa-times"></i></span></p>
+                        <h4>Native Features</h4>
+                        <h5>Media:</h5>
+                        <p class="col-xs-12">Audio & Video: <span id="camera"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Image Capture: <span id="image-capture"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Media Recorder: </span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">RTC (Real-Time Communication): <span id="real-time-communication"><i class="fas fa-times"></i></span></p>
+                        <h5>Location:</h5>
+                        <p class="col-xs-12">Geolocation: <span id="geolocation"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Image Capture: <span id="image-capture"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Media Recorder: <span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <h5>Device features:</h5>
+                        <p class="col-xs-12">Image Capture: <span id="image-capture"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Media Recorder: </span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <h5>Operating system access:</h5>
+                        <p class="col-xs-12">Image Capture: <span id="image-capture"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Media Recorder: </span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <h4>Internet Of Things support:</h4>
+                        <p class="col-xs-12">Bluetooth: <span id="bluetooth"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Beacons: <span id="beacons"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Geofencing: <span id="geofencing"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Proximity Sensor: <span id="proximity-sensor"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Speach Recognition: <span id="speach-recognition"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Other: <span id="other"><i class="fas fa-times"></i></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Export</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h1></h1>
+
+</body>
+</html>
