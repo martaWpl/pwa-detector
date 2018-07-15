@@ -30,36 +30,85 @@
                     <div class="modal-body">
                         <h4 class="col-xs-12">Web Browser:</h4>
                         <span id="browser-navigator"></span>
-                        <h4>PWA basics:</h4>
-                        <p class="col-xs-12">Service Worker: <span id="service-worker"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Background Sync: <span id="background-sync"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Push Notifications: <span id="push-notification"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Cache Storage (Offline): <span id="cache-storage"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Payments: <span id="payments"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Share: <span id="share"><i class="fas fa-times"></i></span></p>
+                        <h4>PWA basics: <span id="pwa-counter" class="counter">0</span>/8</h4>
+                        <p class="col-xs-12">
+                            <i class="fas fa-file-alt"></i>
+                            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">Service Worker: </a>
+                            <span id="service-worker">
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </p>
+                        <p class="col-xs-12">
+                            <i class="fas fa-sync"></i>
+                            <a target="_blank" href="https://github.com/WICG/BackgroundSync">Background Sync: </a>
+                            <span id="background-sync">
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </p>
+                        <p class="col-xs-12">
+                            <i class="fas fa-comment-alt"></i>
+                            <a target="_blank" href="https://developer.mozilla.org/pl/docs/Web/API/Push_API" title="https://developer.mozilla.org/pl/docs/Web/API/Push_API">Push Notifications:</a>
+                            <span id="push-notification">
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </p>
+                        <p class="col-xs-12">
+                            <i class="fas fa-archive"></i>
+                            <a target="_blank" href="https://developer.mozilla.org/pl/docs/Web/API/Cache" title="https://developer.mozilla.org/pl/docs/Web/API/Cache">Cache Storage (Offline):</a>
+                            <span id="cache-storage">
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </p>
+                        <p class="col-xs-12">
+                            <i class="fas fa-shopping-cart"></i>
+                            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API" title="https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API">Payments: </a>
+                            <span id="payments">
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </p>
+                        <p class="col-xs-12">
+                            <i class="fas fa-share-square"></i>
+                            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share" title="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share">Share: </a>
+                            <span id="share">
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </p>
+                        <p class="col-xs-12">
+                            <i class="fas fa-mobile-alt"></i>
+                            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API" title="https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API">Fullscreen:</a>
+                                <span id="fullscreen"><i class="fas fa-times"></i></span>
+                        </p>
                         <h4>Native Features</h4>
                         <h5>Media:</h5>
                         <p class="col-xs-12">Audio & Video: <span id="camera"><i class="fas fa-times"></i></span></p>
                         <p class="col-xs-12">Image Capture: <span id="image-capture"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Media Recorder: </span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Media Recorder: <span id="media-recorder"><i class="fas fa-times"></i></span></p>
                         <p class="col-xs-12">RTC (Real-Time Communication): <span id="real-time-communication"><i class="fas fa-times"></i></span></p>
                         <h5>Location:</h5>
                         <p class="col-xs-12">Geolocation: <span id="geolocation"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Image Capture: <span id="image-capture"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Media Recorder: <span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Device Position: <span id="device-position"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Accelerometer: <span id="accelerometer"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Gyroscope: <span id="gyroscope"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Magnetometer: <span id="magnetometer"><i class="fas fa-times"></i></span></p>
                         <h5>Device features:</h5>
-                        <p class="col-xs-12">Image Capture: <span id="image-capture"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Media Recorder: </span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Wake Lock: <span id="wake-lock"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Ambient Light: <span id="ambient-light"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">USB: <span id="usb"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Vibration: <span id="vibration"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Battery status: <span id="battery status"><i class="fas fa-times"></i></span></p>
                         <h5>Operating system access:</h5>
-                        <p class="col-xs-12">Image Capture: <span id="image-capture"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Media Recorder: </span id="media-recorder"><i class="fas fa-times"></i></span></p>
-                        <h4>Internet Of Things support:</h4>
+                        <p class="col-xs-12">SMS: <span id="image-capture"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Contacts: </span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">File Access: </span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Task Scheduling: </span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Storage quotas: </span id="media-recorder"><i class="fas fa-times"></i></span></p>
+                        <h4>Internet Of Things friendly:</h4>
                         <p class="col-xs-12">Bluetooth: <span id="bluetooth"><i class="fas fa-times"></i></span></p>
                         <p class="col-xs-12">Beacons: <span id="beacons"><i class="fas fa-times"></i></span></p>
                         <p class="col-xs-12">Geofencing: <span id="geofencing"><i class="fas fa-times"></i></span></p>
                         <p class="col-xs-12">Proximity Sensor: <span id="proximity-sensor"><i class="fas fa-times"></i></span></p>
                         <p class="col-xs-12">Speach Recognition: <span id="speach-recognition"><i class="fas fa-times"></i></span></p>
-                        <p class="col-xs-12">Other: <span id="other"><i class="fas fa-times"></i></span></p>
+                        <p class="col-xs-12">Near Field Communication (NFC): <span id="other"><i class="fas fa-times"></i></span></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
