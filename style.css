@@ -1,9 +1,15 @@
 .counter {
     padding-left: 30px;
 }
+body {
+    background-color: #e9ecef;
+}
 #browser-navigator {
     margin-bottom: 20px;
     display: block;
+}
+.image-container {
+    background: white;
 }
 img.pwa {
     margin: auto;

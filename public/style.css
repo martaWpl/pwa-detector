@@ -5,6 +5,14 @@
     margin-bottom: 20px;
     display: block;
 }
+img.pwa {
+    margin: auto;
+    padding-left: 0;
+    display: block;
+}
+.jumbotron-fluid {
+    margin-bottom: 0;
+}
 i {
     padding-right: 15px;
     padding-left: 10px;
