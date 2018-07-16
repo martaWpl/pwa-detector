@@ -1,6 +1,10 @@
 .counter {
     padding-left: 30px;
 }
+#browser-navigator {
+    margin-bottom: 20px;
+    display: block;
+}
 i {
     padding-right: 15px;
     padding-left: 10px;
