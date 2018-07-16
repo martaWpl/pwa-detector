@@ -11,5 +11,5 @@ The user can check browser support for:
 -Share,  
 -Fullscreen.  
 
-<b>Demo:</b>  
+<b>Demo:</b>
 http://pwa-detector.firebaseapp.com
