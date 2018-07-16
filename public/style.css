@@ -1,0 +1,36 @@
+.counter {
+    padding-left: 30px;
+}
+body {
+    background-color: #e9ecef;
+}
+#browser-navigator, #operating-system {
+    margin-bottom: 20px;
+    display: block;
+}
+#author {
+    margin-right: 50px;
+    font-size: small;
+}
+.image-container {
+    background: white;
+}
+img.pwa {
+    margin: auto;
+    padding-left: 0;
+    display: block;
+}
+.jumbotron-fluid {
+    margin-bottom: 0;
+}
+i {
+    padding-right: 15px;
+    padding-left: 10px;
+    width: 50px;
+}
+i.fas.fa-times {
+    color: red;
+}
+i.fas.fa-check {
+    color: green;
+}
