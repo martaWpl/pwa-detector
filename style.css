@@ -4,9 +4,13 @@
 body {
     background-color: #e9ecef;
 }
-#browser-navigator {
+#browser-navigator, #operating-system {
     margin-bottom: 20px;
     display: block;
+}
+#author {
+    margin-right: 50px;
+    font-size: small;
 }
 .image-container {
     background: white;

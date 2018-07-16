@@ -2,11 +2,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const modalDiv = document.getElementById('modal');
     const checkButton = document.getElementById('check-button');
     const browserInfo = document.getElementById('browser-navigator');
+    const osInfo = document.getElementById('operating-system');
+    const osInfoHeader = document.getElementById('osystem');
 
     let userAgent = navigator.userAgent;
+    let operatingSystem = navigator.oscpu;
     pwaCounter = 0;
     if(userAgent && browserInfo) {
         browserInfo.innerText = userAgent;
+    }
+    if(operatingSystem && osInfo) {
+        osInfo.innerText = operatingSystem;
+        if(osInfoHeader) {
+            osInfoHeader.style.setProperty('display','block');
+        }
+
     }
 
     if (checkButton) {
@@ -63,7 +73,7 @@ function checkPayment() {
     }
 }
 function checkShare() {
-    const label = document.getElementById('payments');
+    const label = document.getElementById('share');
     if(label && navigator.share) {
         label.innerHTML = '<i class="fas fa-check"></i>';
         this.pwaCounter++;
