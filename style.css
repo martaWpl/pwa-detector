@@ -8,6 +8,10 @@ body {
     margin-bottom: 20px;
     display: block;
 }
+#btn-close {
+    bottom: 60px;
+    position: absolute;
+}
 #author {
     margin-right: 50px;
     font-size: small;
