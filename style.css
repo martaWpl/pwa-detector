@@ -9,8 +9,7 @@ body {
     display: block;
 }
 #btn-close {
-    bottom: 60px;
-    position: absolute;
+    float: right;
 }
 #author {
     margin-right: 50px;
