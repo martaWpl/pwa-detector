@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let userAgent = navigator.userAgent;
     let operatingSystem = navigator.oscpu;
     pwaCounter = 0;
+    iotCounter = 0;
     if(userAgent && browserInfo) {
         browserInfo.innerText = userAgent;
     }
@@ -16,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if(osInfoHeader) {
             osInfoHeader.style.setProperty('display','block');
         }
-
     }
 
     if (checkButton) {
@@ -26,12 +26,23 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+    /*PWA features detecting*/
     checkServiceWorker();
     checkShare();
     checkStorage();
     checkFullscreen();
 
+    /*IOT features detecting*/
+    checkBluetooth();
+    checkUSB();
+    checkRTC();
+    checkBeacon();
+    checkMedia();
+    checkPower();
+    checkSpeach();
+
     setPwaCounter();
+    setIOTCounter();
 });
 
 function checkServiceWorker() {
@@ -94,4 +105,82 @@ function setPwaCounter() {
     }
 }
 
+function checkBluetooth() {
+    const label = document.getElementById('web-bluetooth');
+    if(label && navigator.bluetooth !== undefined) {
+        label.innerHTML = '<i class="fas fa-check"></i>';
+        this.iotCounter++;
+    }
+}
+function checkUSB() {
+    const label = document.getElementById('web-usb');
+    try {
+        if(label && USB !== undefined) {
+            label.innerHTML = '<i class="fas fa-check"></i>';
+            this.iotCounter++;
+        }
+    }
+    catch(error) {
+        console.warn(error);
+    }
+}
+function checkRTC() {
+    const label = document.getElementById('web-rtc');
+    if(label && RTCPeerConnection !== undefined) {
+        label.innerHTML = '<i class="fas fa-check"></i>';
+        this.iotCounter++;
+    }
+}
+function checkBeacon() {
+    const label = document.getElementById('beacons');
+    if(label && navigator.sendBeacon !== undefined) {
+        label.innerHTML = '<i class="fas fa-check"></i>';
+        this.iotCounter++;
+    }
+}
+function checkMedia() {
+    const label = document.getElementById('video-access');
+    if(label && navigator.getUserMedia !== undefined) {
+        label.innerHTML = '<i class="fas fa-check"></i>';
+        this.iotCounter++;
+    }
+}
+function checkPower() {
+    const label = document.getElementById('power-management');
+    if(label && navigator.mozPower !== undefined) {
+        label.innerHTML = '<i class="fas fa-check"></i>';
+        this.iotCounter++;
+    }
+}
+function checkSpeach() {
+    const label = document.getElementById('voice-rec');
+    let speechRecognition = false;
+    try {
+        if (SpeechRecognition !== undefined) {
+            speechRecognition = true;
+        }
+    } catch (error) {
+        console.warn(error);
+    }
+    try {
+        if (webkitSpeechRecognition !== undefined) {
+            speechRecognition = true;
+        }
+    } catch (error) {
+        console.warn(error);
+    }
 
+    if (label && (speechRecognition === true)) {
+        label.innerHTML = '<i class="fas fa-check"></i>';
+        this.iotCounter++;
+    }
+}
+
+
+
+function setIOTCounter() {
+    const counterSpan = document.getElementById('iot-counter');
+    if(counterSpan) {
+        counterSpan.innerText = iotCounter;
+    }
+}
